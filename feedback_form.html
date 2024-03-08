@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма зворотного зв'язку</title>
+</head>
+<body>
+<h2>Форма зворотного зв'язку</h2>
+<form action="/submit_feedback_form" method="post" enctype="multipart/form-data">
+  <label for="contact_number">Номер телефону для зворотного зв'язку:</label><br>
+  <input type="tel" id="contact_number" name="contact_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+  <label for="category">Категорія:</label><br>
+  <select id="category" name="category" required>
+    <option value="support">Підтримка</option>
+    <option value="feedback">Побажання</option>
+    <option value="complaint">Скарга</option>
+    <option value="other">Інше</option>
+  </select><br>
+  <label for="subject">Тема:</label><br>
+  <input type="text" id="subject" name="subject" required><br>
+  <label for="message">Текст повідомлення:</label><br>
+  <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+  <label for="attachment">Прикріпити файл:</label><br>
+  <input type="file" id="attachment" name="attachment" accept="image/*, .pdf, .doc, .docx"><br>
+  <label for="contact_method">Вибір способу для зворотного зв'язку:</label><br>
+  <input type="radio" id="contact_method_phone" name="contact_method" value="phone" required>
+  <label for="contact_method_phone">Телефон</label><br>
+  <input type="radio" id="contact_method_email" name="contact_method" value="email" required>
+  <label for="contact_method_email">Пошта</label><br>
+  <input type="submit" value="Надіслати">
+</form>
+</body>
+</html>
